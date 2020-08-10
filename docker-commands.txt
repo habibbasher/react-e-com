@@ -1,0 +1,10 @@
+####
+ To run dev: docker-compose up --build react-fe-dev
+ If some packages are installed then first run 
+ $ docker-compose down
+ $ docker-compose up --build react-fe-dev
+ # If no cache build is need
+ $ docker-compose build --no-cache react-fe-dev (For no cache build, it takes long time)
+
+####
+  To run prod: docker-compose up -d --build react-fe-prod

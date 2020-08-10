@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  react-fe-dev:
+    container_name: react-fe-dev
+    build:
+      context: .
+      dockerfile: ./dockers/Dockerfile-dev
+    image: react_fe_dev
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '3001:3000'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+
+  react-fe-prod:
+    container_name: react-fe-prod
+    build:
+      context: .
+      dockerfile: ./dockers/Dockerfile-prod
+    image: react_fe_prod
+    ports:
+      - '80:80'
+
